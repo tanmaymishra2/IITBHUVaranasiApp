@@ -207,7 +207,6 @@ public class Feedfragment_notifcation_Activity extends AppCompatActivity impleme
 
 
 
-
  }
 
     @Override
@@ -255,8 +254,8 @@ public class Feedfragment_notifcation_Activity extends AppCompatActivity impleme
                 break;
 
             case R.id.location:
-                Intent intent1 = new Intent(this,Full_screen_imageActivity.class);
-              startActivity(intent1);
+                startActivity(new Intent(this,FragmentSupportActivity.class));
+
                /* Uri gmmIntentUri = Uri.parse("geo:37.7749,-122.4192?q=" + Uri.encode("1st & Pike, Seattle"));
                 Intent mapIntent= new Intent(Intent.ACTION_VIEW, gmmIntentUri);
                 mapIntent.setPackage("com.google.android.apps.maps");
