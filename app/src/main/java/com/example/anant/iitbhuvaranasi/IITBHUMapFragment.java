@@ -55,7 +55,7 @@ public class IITBHUMapFragment extends Fragment implements
         OnMapReadyCallback,
         ActivityCompat.OnRequestPermissionsResultCallback {
 
-    private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
+    public static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
 
     private static final String TAG = com.google.android.gms.maps.MapFragment.class.getSimpleName();
     final LatLng C_V_RAMAN = new LatLng(25.265912276191887, 82.9862916469574);
@@ -117,6 +117,8 @@ public class IITBHUMapFragment extends Fragment implements
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_map, container, false);
 
@@ -125,6 +127,7 @@ public class IITBHUMapFragment extends Fragment implements
         SupportMapFragment mapFragment =
                 (SupportMapFragment) getChildFragmentManager()
                         .findFragmentById(R.id.map);
+
 
         registrationDeskMarker = BitmapDescriptorFactory.fromResource(R.drawable.baseline_place_white_18dp);
         hostelMarker = BitmapDescriptorFactory.fromResource(R.drawable.baseline_place_white_18dp);
@@ -245,8 +248,9 @@ public class IITBHUMapFragment extends Fragment implements
     private void enableMyLocation() {
         if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED) {
-            // Permission to access the location is missing.
-            PermissionUtils.requestPermission((AppCompatActivity) getContext().getApplicationContext(), LOCATION_PERMISSION_REQUEST_CODE,
+            // Permission to access the location is missing
+            // TODO : Error is coming from this line(closed)
+            PermissionUtils.requestPermission(/*(AppCompatActivity)*/this.getActivity() , LOCATION_PERMISSION_REQUEST_CODE,
                     Manifest.permission.ACCESS_FINE_LOCATION, true);
         } else if (mMap != null) {
             // Access to the location has been granted to the app.

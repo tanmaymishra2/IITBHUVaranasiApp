@@ -1,6 +1,5 @@
 package com.example.anant.iitbhuvaranasi;
 
-import android.app.Fragment;
 import android.os.Bundle;
 
 import androidx.fragment.app.FragmentActivity;
@@ -18,7 +17,6 @@ public class FragmentSupportActivity extends FragmentActivity {
         setContentView(R.layout.activity_fragment_support);
 
         fragmentManager = getSupportFragmentManager();
-
 
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             IITBHUMapFragment fragment = new IITBHUMapFragment();
